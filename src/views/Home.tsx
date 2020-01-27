@@ -1,21 +1,55 @@
 import React from "react"
-import Navbar from "../components/Navbar/Navbar"
+import Navbar, { NavbarProps } from "../components/Navbar/Navbar"
+import Inicio from "./Inicio"
 
 import "../styles/home.scss"
 
-const Home = (props: any) => {
+const setLinks:NavbarProps = {
+  links: [
+    {
+      name: "inicio",
+      url: "#inicio",
+      active: true
+    },
+    {
+      name: "catálogo",
+      url: "#catalogo",
+      active: false
+    },
+    {
+      name: "servicios",
+      url: "#servicios",
+      active: false
+    },
+    {
+      name: "clientes",
+      url: "#clientes",
+      active: false
+    },
+    {
+      name: "contacto",
+      url: "#contacto",
+      active: false
+    },
+    {
+      name: "nosotros",
+      url: "#nosotros",
+      active: false
+    },
+  ]
+}
+
+
+const Home:React.FunctionComponent = () => {
   return (
-    <div className={`hc-home ${props.theme}`}>
-      <div className="hc-body">
+    <div className="atk-home">
+      <div className="atk-body">
         {/** NAVBAR */}
-        <Navbar className={`hc-home ${props.theme}`}/>
+        <Navbar links={setLinks.links} />
+        <Inicio/>
       </div>
     </div>
   )
-}
-
-Home.defaultProps = {
-    name:""
 }
 
 export default Home

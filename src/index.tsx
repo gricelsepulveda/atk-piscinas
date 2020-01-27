@@ -4,7 +4,7 @@ import Home from "./views/Home"
 
 import "./styles/general.scss"
 
-const App = () => <Home theme="dark"/>
+const App = () => <Home/>
 
 if (module.hot) {
   module.hot.accept();

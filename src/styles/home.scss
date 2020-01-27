@@ -7,26 +7,59 @@ body {
   margin: 0;
 }
 
-.hc-home {
+.atk-home {
   width: 100ww;
   position: relative;
   min-height: 100vh;
-  .hc-body {
+  .atk-body {
     width: 100%;
     height: 100%;
-    padding: 20px;
     box-sizing: border-box;
   }
-  &.dark {
-    background-color: $black;
-    h1, h2, h3, h4, h5, h6 {
-      color: $white;
+}
+
+.atk-inicio {
+  width: 100vw;
+  height: auto;
+  position: relative;
+  height: 500px;
+  background: {
+    repeat: no-repeat;
+    size: cover;
+    position: relative;
+    image: url("https://triggerlab.sfo2.digitaloceanspaces.com/atk/atk-wave-inicio.svg");
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  .atk-titles {
+    padding-top: 72px;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    .atk-button {
+      margin-top: 40px;
+    }
+    .atk-divider {
+      height: 24px;
+      width: auto;
     }
   }
-  &.light {
-    background-color: darken($white, 10%);
-    h1, h2, h3, h4, h5, h6 {
+  .atk-inicio-piscina {
+    height: 270px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    > h1, > span {
       color: $black;
     }
   }
 }
+

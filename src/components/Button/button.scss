@@ -1,4 +1,84 @@
 @import "../../styles/common/vars.scss";
+@import "../../styles/common/mixins.scss";
 
 .atk-button {
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  cursor: pointer;
+  @include shadow;
+  @include animate;
+  button {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    color: $white;
+    font: {
+      size: 18px;
+      weight: 600;
+    }
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+  }
+  &.md {
+    height: 36px;
+    border-radius: 18px;
+  }
+  &.lg {
+    height: 48px;
+    border-radius: 24px;
+  }
+  &.color-1 {
+    background-color: $color-1;
+    &:hover {
+      background-color: lighten($color-1, 10%);
+    }
+  }
+  &.color-2 {
+    background-color: $color-2;
+    &:hover {
+      background-color: lighten($color-2, 10%);
+    }
+  }
+  &.color-3 {
+    background-color: $color-3;
+    &:hover {
+      background-color: lighten($color-3, 10%);
+    }
+  }
+  &.color-4 {
+    background-color: $color-4;
+    &:hover {
+      background-color: lighten($color-4, 10%);
+    }
+  }
+  &.border {
+    background-color: $border;
+    &:hover {
+      background-color: darken($border, 10%);
+    }
+    button {
+      color: $black;
+    }
+  }
+  &.black {
+    background-color: $black;
+    &:hover {
+      background-color: lighten($black, 10%);
+    }
+  }
+  &.white {
+    background-color: $white;
+    &:hover {
+      background-color: darker($white, 10%);
+    }
+    button {
+      color: $black;
+    }
+  }
 }

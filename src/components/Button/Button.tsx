@@ -1,19 +1,20 @@
 import React, { useRef, MutableRefObject } from "react"
 import { Colors, Size } from "../../utils/commonProps"
+import "./button.scss"
 
 export interface ButtonProps {
   disabled: boolean,
   size: Size,
   color: Colors,
-  width: number,
+  width: number | "auto",
   value: string,
   name: string,
   kind: "default" | "rounded-icon" | "square-icon",
   active: boolean,
-  icon: "string",
-  onclick: (element: React.MutableRefObject<null | any>) => void
-  onmouseover: (element: React.MutableRefObject<null | any>) => void,
-  onmouseout: (element: React.MutableRefObject<null | any>) => void
+  icon: string | undefined,
+  onclick: (element: React.MutableRefObject<null | any>) => void | undefined
+  onmouseover: (element: React.MutableRefObject<null | any>) => void | undefined,
+  onmouseout: (element: React.MutableRefObject<null | any>) => void | undefined
 }
 
 const Button:React.FunctionComponent<ButtonProps> = (props) => {
@@ -43,9 +44,9 @@ const Button:React.FunctionComponent<ButtonProps> = (props) => {
   return (
     <div className={`atk-button
       ${props.disabled ? "disabled": ""}
-      ${props.size} ${props.kind}
-      ${props.color} ${props.active ? "active" : ""}`}
-      style={{width: `${props.width ? props.width : "auto"}`}}
+      ${props.size.size} ${props.kind}
+      ${props.color.color} ${props.active ? "active" : ""}`}
+      style={{width: `${props.width}`}}
     >
       <button
         name={props.name}
@@ -62,7 +63,7 @@ const Button:React.FunctionComponent<ButtonProps> = (props) => {
           )
           : null
         }
-        {props.kind != "icon" ? props.value : ""}
+        {props.kind == "default" ? props.value : ""}
       </button>
     </div>
   )
