@@ -1,4 +1,5 @@
 @import "./common/vars.scss";
+@import "./common/mixins.scss";
 
 body {
   width: 100vw;
@@ -63,3 +64,40 @@ body {
   }
 }
 
+.atk-catalogo {
+  width: 100vw;
+  padding-left: 40px;
+  padding-right: 40px;
+  .atk-titles {
+    @include clean-webkit;
+    @include zero-hard;
+    color: $white;
+    display: inline-block;
+    width: auto;
+    padding-left: 60px!important;
+    padding-right: 20px!important;
+    font: {
+      size: 18px;
+      weight: 600;
+    }
+    text-align: left;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 18px 18px 0px 0px;
+    &.color-1 {
+      background-color: $color-1;
+    }
+    &.color-2 {
+      background-color: $color-2;
+    }
+    &.color-3 {
+      background-color: $color-3;
+    }
+    &.color-4 {
+      background-color: $color-4;
+    }
+    &.black {
+      background-color: $black;
+    }
+  }
+}

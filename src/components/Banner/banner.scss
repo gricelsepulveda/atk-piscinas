@@ -1,0 +1,12 @@
+@import "../../styles/common/vars.scss";
+@import "../../styles/common/mixins.scss";
+
+.atk-banner {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  background: transparent;
+
+}

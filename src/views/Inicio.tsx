@@ -1,8 +1,6 @@
 import React from "react"
 import Button from "../components/Button/Button"
 
-import "../styles/home.scss"
-
 const Inicio:React.FunctionComponent = () => {
 
   const goToContact = (event:string) => {

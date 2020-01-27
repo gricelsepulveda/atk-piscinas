@@ -1,6 +1,7 @@
 import React from "react"
 import Navbar, { NavbarProps } from "../components/Navbar/Navbar"
 import Inicio from "./Inicio"
+import Catalogo from "./Catalogo"
 
 import "../styles/home.scss"
 
@@ -47,6 +48,7 @@ const Home:React.FunctionComponent = () => {
         {/** NAVBAR */}
         <Navbar links={setLinks.links} />
         <Inicio/>
+        <Catalogo/>
       </div>
     </div>
   )
