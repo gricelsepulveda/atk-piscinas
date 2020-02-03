@@ -35,6 +35,7 @@ body {
   justify-content: center;
   align-content: center;
   align-items: center;
+  box-sizing: border-box;
   .atk-titles {
     padding-top: 72px;
     position: relative;
@@ -68,6 +69,7 @@ body {
   width: 100vw;
   padding-left: 40px;
   padding-right: 40px;
+  box-sizing: border-box;
   .atk-titles {
     @include clean-webkit;
     @include zero-hard;

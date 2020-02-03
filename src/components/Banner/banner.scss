@@ -5,8 +5,59 @@
   width: 100%;
   height: 450px;
   position: relative;
-  padding: 20px;
   box-sizing: border-box;
   background: transparent;
-
+  .atk-banner-group {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    @include clean-list;
+    @include zero-hard;
+    @include flex-row-center;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    @include animate;
+    &.active {
+      opacity: 1;
+    }
+    .atk-banner-slide {
+      @include clean-list;
+      @include zero-hard;
+      width: 25%;
+      height: 100%;
+      @include flex-col-center;
+      margin-right: 40px;
+      &:last-of-type {
+        margin-right: 0px;
+      }
+      .atk-banner-img {
+        @include clean-webkit;
+        @include zero-hard;
+        margin-bottom: 20px!important;
+      }
+      .atk-slider-description {
+        width: 100%;
+        height: auto;
+        h3 {
+          @include clean-webkit;
+          margin-bottom: 10px!important;
+          font: {
+            size: 14px;
+            weight: 600;
+          }
+          text-align: center;
+        }
+        p {
+          width: 60%;
+          height: auto;
+          text-align: center;
+          font: {
+            size: 12px;
+            weight: 400;
+          }
+        }
+      }
+    }
+  }
 }

@@ -25,25 +25,15 @@ const Banner:React.FunctionComponent<BannerProps> = (props) => {
 
   const setDataToBanner = (data: Slider[]) => {
     let times = data.length / 3
-    console.log(times)
     let slide_set:any[] = []
     for (let i=0; i < times; i++) {
       slide_set.push([])
-      for (let x=1; x <= 3; x++) {
-        if (i == 0) {
-          slide_set[i].push({
-            title: data[(x-1)*(i+1)].title,
-            text: data[(x-1)*(i+1)].text,
-            image: data[(x-1)*(i+1)].image
-          })
-        }
-        else {
-          slide_set[i].push({
-            title: data[x+i].title,
-            text: data[x+i].text,
-            image: data[x+i].image
-          })
-        }
+      for (let x=0; x <= 2; x++) {
+        slide_set[i].push({
+          title: data[x+(3*i)].title,
+          text: data[x+(3*i)].text,
+          image: data[x+(3*i)].image
+        })
       }
     }
     return slide_set
