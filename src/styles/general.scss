@@ -7,3 +7,51 @@ h1 {
   font-size: 2.26rem;
   font-weight: 900;
 }
+
+//FLEX
+.flex {
+  display: flex;
+  &.row {
+    flex-direction: row;
+    &.center {
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+    &.start {
+      justify-content: flex-start;
+      align-content: center;
+      align-items: center;
+    }
+    &.end {
+      justify-content: flex-end;
+      align-content: center;
+      align-items: center;
+    }
+    &.between {
+      justify-content: space-between;
+      align-content: center;
+      align-items: center;
+    }
+    &.around {
+      justify-content: space-around;
+      align-content: center;
+      align-items: center;
+    }
+  }
+  &.col {
+    flex-direction: column;
+    &.center {
+      align-items: center;
+      justify-content: center;
+    }
+    &.start {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    &.end {
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+  }
+}

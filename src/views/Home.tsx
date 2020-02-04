@@ -3,6 +3,9 @@ import Navbar, { NavbarProps } from "../components/Navbar/Navbar"
 import Inicio from "./Inicio"
 import Catalogo from "./Catalogo"
 import Servicios from "./Servicios"
+import Clientes from "./Clientes"
+import Contacto from "./Contacto"
+import Footer from "./Footer"
 
 import "../styles/home.scss"
 
@@ -51,6 +54,9 @@ const Home:React.FunctionComponent = () => {
         <Inicio/>
         <Catalogo/>
         <Servicios/>
+        <Clientes/>
+        <Contacto/>
+        <Footer/>
       </div>
     </div>
   )
