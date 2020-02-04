@@ -10,7 +10,7 @@ const Catalogo:React.FunctionComponent = () => {
 
   return (
     <section className="atk-catalogo">
-      <h2 className="atk-titles">Catálogo</h2>
+      <h2 className="atk-titles color-1">Catálogo</h2>
       <Banner data={bannerData.data} active={bannerData.active}/>
     </section>
   )

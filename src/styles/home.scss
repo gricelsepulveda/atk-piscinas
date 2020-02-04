@@ -26,8 +26,8 @@ body {
   height: 500px;
   background: {
     repeat: no-repeat;
-    size: cover;
-    position: relative;
+    size: auto 100%;
+    position: bottom left;
     image: url("https://triggerlab.sfo2.digitaloceanspaces.com/atk/atk-wave-inicio.svg");
   }
   display: flex;
@@ -67,39 +67,107 @@ body {
 
 .atk-catalogo {
   width: 100vw;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
   box-sizing: border-box;
+  background-color: $border;
+  padding-bottom: 40px;
   .atk-titles {
-    @include clean-webkit;
-    @include zero-hard;
-    color: $white;
-    display: inline-block;
-    width: auto;
+    min-width: 25%;
     padding-left: 60px!important;
     padding-right: 20px!important;
-    font: {
-      size: 18px;
-      weight: 600;
-    }
+  }
+}
+
+.atk-titles {
+  @include clean-webkit;
+  @include zero-hard;
+  color: $white;
+  display: inline-block;
+  width: auto;
+  min-width: 25%;
+  padding-left: 60px!important;
+  padding-right: 20px!important;
+  font: {
+    size: 18px;
+    weight: 600;
+  }
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 0px 18px 18px 0px;
+  &.color-1{
+    background-color: $color-1;
+  }
+  &.color-2 {
+    background-color: $color-2;
+  }
+  &.color-3 {
+    background-color: $color-3;
+  }
+  &.color-4 {
+    background-color: $color-4;
+  }
+  &.black {
+    background-color: $black;
+  }
+}
+
+.atk-services {
+  z-index: -1;
+  margin-top: -2px;
+  height: auto;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background: {
+    repeat: repeat-x;
+    size: auto 100%;
+    position: top left;
+    image: url("https://triggerlab.sfo2.digitaloceanspaces.com/atk/atk-bg-gradient.png");
+  }
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-end;
+  box-sizing: border-box;
+  .atk-titles {
+    min-width: 30%;
+    border-radius: 18px 0px 0px 18px;
+    padding-left: 60px!important;
+    padding-right: 20px!important;
+    position: absolute;
+    right: 0px;
+    top: 10px;
     text-align: left;
-    height: 36px;
-    line-height: 36px;
-    border-radius: 18px 18px 0px 0px;
-    &.color-1 {
-      background-color: $color-1;
+  }
+  .atk-servicio-piscina {
+    width: 30%;
+    height: auto;
+    position: absolute;
+    left: calc(50% - 30% - 80px);
+    bottom: 80px;
+    z-index: 0;
+  }
+  .atk-service-description {
+    width: 30%;
+    padding-bottom: 72px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    p {
+      width: 100%;
+      text-align: left;
     }
-    &.color-2 {
-      background-color: $color-2;
-    }
-    &.color-3 {
-      background-color: $color-3;
-    }
-    &.color-4 {
-      background-color: $color-4;
-    }
-    &.black {
-      background-color: $black;
+    .atk-button {
+      margin-top: 40px;
     }
   }
 }

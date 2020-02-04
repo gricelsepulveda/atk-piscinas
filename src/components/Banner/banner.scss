@@ -35,28 +35,80 @@
         @include clean-webkit;
         @include zero-hard;
         margin-bottom: 20px!important;
+        height: 250px;
+        width: 250px;
+        position: relative;
+        border-radius: 10px;
+        border: 10px solid rgba(darken($white-alt, 5%), 0.5);
+        box-sizing: border-box;
+        background: {
+          color: $white;
+          size: 100% auto;
+          position: center;
+          repeat: no-repeat;
+        }
+        z-index: 1;
+        .atk-slide-description {
+          border-radius: 10px;
+          width: 250px;
+          height: 250px;
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          @include flex-col-center;
+          @include animate;
+          background-color: rgba($color-1, 0.9);
+          color: $white;
+          opacity: 0;
+          z-index: 0;
+          h3 {
+            @include clean-webkit;
+            margin-bottom: 5px!important;
+            font: {
+              size: 14px;
+              weight: 600;
+            }
+            text-align: center;
+          }
+          p {
+            width: 60%;
+            height: auto;
+            text-align: center;
+            font: {
+              size: 12px;
+              weight: 400;
+            }
+          }
+        }
+        &:hover{
+          cursor: pointer;
+          .atk-slide-description{
+            opacity: 1;
+          }
+        }
       }
-      .atk-slider-description {
-        width: 100%;
-        height: auto;
-        h3 {
-          @include clean-webkit;
-          margin-bottom: 10px!important;
-          font: {
-            size: 14px;
-            weight: 600;
-          }
-          text-align: center;
-        }
-        p {
-          width: 60%;
-          height: auto;
-          text-align: center;
-          font: {
-            size: 12px;
-            weight: 400;
-          }
-        }
+    }
+  }
+  .atk-banner-buttons{
+    @include flex-row-center;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    button {
+      width: 28px;
+      height: 28px;
+      margin-right: 20px;
+      border: 0;
+      background-color: $white;
+      outline: 0;
+      border-radius: 14px;
+      cursor: pointer;
+      &.active {
+        background-color: $color-1;
+      }
+      &:last-of-type{
+        margin-right: 0px;
       }
     }
   }
