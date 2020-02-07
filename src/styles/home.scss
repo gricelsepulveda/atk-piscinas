@@ -14,13 +14,15 @@ body {
 }
 
 .atk-home {
-  width: 100ww;
+  width: 100vw;
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
   .atk-body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 }
 

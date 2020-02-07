@@ -6,3 +6,13 @@ $color-2: #0FBDA4;
 $color-3: #0F78BD;
 $color-4: #F2DA13;
 $border: #CAEAE4;
+
+$xs: "(max-width: 340px)";
+$sm: "(max-width: 767px)";
+$md: "(max-width: 991px)";
+$lg: "(max-width: 1199px)";
+$xl: "(min-width: 1600px)";
+$xs-abs: "(min-width: 0px) and (max-width: 339px)";
+$sm-abs: "(min-width: 340px) and (max-width: 767px)";
+$md-abs: "(min-width: 768px) and (max-width: 991px)";
+$lg-abs: "(min-width: 992px) and (max-width: 1199px)";
