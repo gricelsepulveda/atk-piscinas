@@ -1,6 +1,64 @@
 @import "./common/vars.scss";
 @import "./common/mixins.scss";
 
+.atk-brand-logo {
+  display: none;
+  @media #{$sm}{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: $white;
+    display: inline-block;
+    height: 64px;
+    width: 100vw;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 99999999;
+    @include flex-row-center;
+    @include shadow;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding-left: 20px;
+    > img {
+      height: 36px;
+      width: auto;
+    }
+  }
+}
+
+
+.atk-mobile-button{
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  @include flex-col-center;
+  background-color: $color-1;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  right: 20px;
+  top: 14px;
+  z-index: 99999999999999999;
+  @media #{$sm}{
+    display: flex;
+  }
+  &:after{
+    width: 36px;
+    height: 36px;
+    @include flex-col-center;
+    content: "";
+    color: $white;
+    background: {
+      position: center;
+      repeat: no-repeat;
+      size: 18px auto;
+      image: url("data:image/svg+xml;base64,
+      PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIC01MyAzODQgMzg0IiB3aWR0aD0iNTEyIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJtMzY4IDE1NC42Njc5NjloLTM1MmMtOC44MzIwMzEgMC0xNi03LjE2Nzk2OS0xNi0xNnM3LjE2Nzk2OS0xNiAxNi0xNmgzNTJjOC44MzIwMzEgMCAxNiA3LjE2Nzk2OSAxNiAxNnMtNy4xNjc5NjkgMTYtMTYgMTZ6bTAgMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPjxwYXRoIGQ9Im0zNjggMzJoLTM1MmMtOC44MzIwMzEgMC0xNi03LjE2Nzk2OS0xNi0xNnM3LjE2Nzk2OS0xNiAxNi0xNmgzNTJjOC44MzIwMzEgMCAxNiA3LjE2Nzk2OSAxNiAxNnMtNy4xNjc5NjkgMTYtMTYgMTZ6bTAgMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPjxwYXRoIGQ9Im0zNjggMjc3LjMzMjAzMWgtMzUyYy04LjgzMjAzMSAwLTE2LTcuMTY3OTY5LTE2LTE2czcuMTY3OTY5LTE2IDE2LTE2aDM1MmM4LjgzMjAzMSAwIDE2IDcuMTY3OTY5IDE2IDE2cy03LjE2Nzk2OSAxNi0xNiAxNnptMCAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+PC9nPiA8L3N2Zz4=");
+    }
+  }
+}
+
 body {
   width: 100vw;
   overflow-x: hidden;
@@ -52,8 +110,17 @@ body {
     justify-content: center;
     align-content: center;
     align-items: center;
+    @media #{$sm}{
+      padding-left: 20px!important;
+      font-size: 14px;
+    }
     > h1, > span {
       color: $black;
+    }
+    > span {
+      @media #{$sm}{
+        line-height: 14px;
+      }
     }
     .atk-button {
       margin-top: 40px;
@@ -76,10 +143,17 @@ body {
   box-sizing: border-box;
   background-color: $border;
   padding-bottom: 40px;
+  @media #{$sm}{
+    height: 800px;
+  }
   .atk-titles {
     min-width: 25%;
     padding-left: 60px!important;
     padding-right: 20px!important;
+    @media #{$sm}{
+      padding-left: 20px!important;
+      margin-top: 20px!important;
+    }
   }
 }
 
@@ -100,6 +174,10 @@ body {
   height: 36px;
   line-height: 36px;
   border-radius: 0px 18px 18px 0px;
+  @media #{$sm}{
+    padding-left: 20px!important;
+    font-size: 14px;
+  }
   &.color-1{
     background-color: $color-1;
   }
@@ -139,6 +217,9 @@ body {
   align-content: center;
   align-items: flex-end;
   box-sizing: border-box;
+  @media #{$sm}{
+    padding-bottom: 0px;
+  }
   .atk-titles {
     min-width: 30%;
     border-radius: 18px 0px 0px 18px;
@@ -156,6 +237,13 @@ body {
     left: calc(50% - 30% - 80px);
     bottom: 80px;
     z-index: 0;
+    @media #{$sm}{
+      position: relative;
+      left: initial;
+      bottom: initial;
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
   .atk-service-description {
     width: 30%;
@@ -166,12 +254,21 @@ body {
     justify-content: flex-start;
     align-content: flex-start;
     align-items: flex-start;
+    @media #{$sm}{
+      align-items: center!important;
+    }
     p {
       width: 100%;
       text-align: left;
+      @media #{$sm}{
+        text-align: center;
+      }
     }
     .atk-button {
       margin-top: 40px;
+    }
+    @media #{$sm}{
+      width: 100%;
     }
   }
 }
@@ -180,9 +277,16 @@ body {
 .atk-clients{
   padding-top: 80px;
   @include flex-col-center;
+  @media #{$sm}{
+    padding-top: 20px;
+  }
   > h1 {
       color: $black;
       margin-bottom: 60px!important;
+      @media #{$sm}{
+        margin-bottom: 40px!important;
+        font-size: 18px!important;
+      }
   }
   .atk-clients-wrapper {
     width: 100%;
@@ -190,6 +294,10 @@ body {
     @include zero-hard;
     @include flex-row-center;
     margin-bottom: 100px!important;
+    @media #{$sm}{
+      flex-direction: column!important;
+      margin-bottom: 30px!important;
+    }
     .atk-client {
       @include clean-list;
       @include zero-hard;
@@ -199,6 +307,11 @@ body {
       margin-right: 40px;
       &:last-of-type {
         margin-right: 0px;
+      }
+      @media #{$sm}{
+        width: 100%;
+        margin-right: 0px;
+        height: auto;
       }
       .atk-client-img {
         @include clean-webkit;
@@ -214,6 +327,10 @@ body {
           size: 100% auto;
           position: center;
           repeat: no-repeat;
+        }
+        @media #{$sm}{
+          width: 150px;
+          height: 150px;
         }
       }
       .atk-client-description {
@@ -236,6 +353,9 @@ body {
             size: 13px;
             weight: 500;
           }
+        }
+        @media #{$sm}{
+          margin-bottom: 40px;
         }
       }
     }
@@ -274,11 +394,17 @@ body {
     }
     margin-bottom: 80px;
     box-sizing: border-box;
+    @media #{$sm}{
+      width: auto;
+    }
   }
   form {
     box-sizing: border-box;
     width: 35%;
     @include flex-col-center;
+    @media #{$sm}{
+      width: 80%;
+    }
     label {
       color: $black;
       width: 100%;
@@ -332,12 +458,20 @@ body {
   padding-right: 40px;
   padding-top: 30px;
   padding-bottom: 20px;
+  @media #{$sm}{
+    flex-direction: column!important;
+  }
   .section {
     padding: 20px;
     p {
       text-align: center;
       font-size: 13px;
       font-weight: 400;
+    }
+    @media #{$sm}{
+      width: 100% !important;
+      margin: 0!important;
+      padding: 0!important;
     }
   }
   .atk-logo{

@@ -2,7 +2,7 @@ import React from "react"
 
 const Footer:React.FunctionComponent = () => {
   return (
-    <section className="atk-footer flex row center">
+    <section className="atk-footer flex row center" id="nosotros">
       <div className="flex col center section" style={{width: "35%", marginLeft: "20px"}}>
         <a href="inicio" className="atk-logo">
           <img src="https://triggerlab.sfo2.digitaloceanspaces.com/atk/atk-logo.svg"/>

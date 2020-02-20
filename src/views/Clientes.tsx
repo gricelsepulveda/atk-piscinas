@@ -2,7 +2,7 @@ import React from "react"
 
 const Clientes:React.FunctionComponent = () => {
   return (
-    <section className="atk-clients">
+    <section className="atk-clients" id="clientes">
       <h1>Clientes Satisfechos</h1>
       <ul className="flex row center atk-clients-wrapper">
         <li className="atk-client">

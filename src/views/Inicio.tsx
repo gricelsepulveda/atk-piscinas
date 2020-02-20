@@ -4,11 +4,11 @@ import Button from "../components/Button/Button"
 const Inicio:React.FunctionComponent = () => {
 
   const goToContact = (event:string) => {
-
+    window.location.href = "./#contacto"
   }
 
   return (
-    <section className="atk-inicio">
+    <section className="atk-inicio" id="inicio">
       <img 
         src="https://triggerlab.sfo2.digitaloceanspaces.com/atk/atk-piscina.svg"
         className="atk-inicio-piscina"

@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import Navbar, { NavbarProps } from "../components/Navbar/Navbar"
 import Inicio from "./Inicio"
 import Catalogo from "./Catalogo"
@@ -9,7 +9,7 @@ import Footer from "./Footer"
 
 import "../styles/home.scss"
 
-const setLinks:NavbarProps = {
+const setLinks = {
   links: [
     {
       name: "inicio",
@@ -46,11 +46,16 @@ const setLinks:NavbarProps = {
 
 
 const Home:React.FunctionComponent = () => {
+  const [open, setOpen] = useState(false)
   return (
     <div className="atk-home">
       <div className="atk-body">
+        <a href="#inicio" className="atk-brand-logo">
+          <img src="https://triggerlab.sfo2.digitaloceanspaces.com/atk/atk-logo.svg"/>
+        </a>
+        <button className="atk-mobile-button" type="button" onClick={() => setOpen(!open)}></button>
         {/** NAVBAR */}
-        <Navbar links={setLinks.links} />
+        <Navbar links={setLinks.links} open={open}/>
         <Inicio/>
         <Catalogo/>
         <Servicios/>

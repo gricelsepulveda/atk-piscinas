@@ -8,13 +8,13 @@ export interface NavLink {
 }
 
 export interface NavbarProps {
-  links: NavLink[]
+  links: NavLink[],
+  open: boolean
 }
 
 const Navbar:React.FunctionComponent<NavbarProps> = (props) => {
   const [links, setLinks] = useState(props.links)
   const [active, setActive] = useState(0)
-  
   let _links = links
 
   const handleLink = (key: number) =>  {
@@ -31,7 +31,7 @@ const Navbar:React.FunctionComponent<NavbarProps> = (props) => {
 
 
   return (
-    <nav className="atk-navbar">
+    <nav className={`atk-navbar ${props.open == true ? "active" : ""}`}>
       <ul className="atk-nav-links">
         {
           links.map((item, index) => (
@@ -47,7 +47,7 @@ const Navbar:React.FunctionComponent<NavbarProps> = (props) => {
           ))
         }
       </ul>
-      <a href="inicio" className="atk-brand-logo">
+      <a href="#inicio" className="atk-brand-logo">
         <img src="https://triggerlab.sfo2.digitaloceanspaces.com/atk/atk-logo.svg"/>
       </a>
     </nav>

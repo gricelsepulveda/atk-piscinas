@@ -3,16 +3,17 @@ import Button from "../components/Button/Button"
 
 const Servicios:React.FunctionComponent = () => {
   const goToContact = (event:string) => {
+    window.location.href = "./#contacto"
   }
   return (
-    <section className="atk-services">
+    <section className="atk-services" id="servicios">
       <img 
         src="https://triggerlab.sfo2.digitaloceanspaces.com/atk/atk-piscina-servicios.svg"
         className="atk-servicio-piscina"
         alt="piscina atk"
         title="psicina atk"
       />
-      <h2 className="atk-titles black">Catálogo</h2>
+      <h2 className="atk-titles black">Servicios</h2>
       <div className="flex col end atk-service-description">
         <p>Además de nuestros servicios de instalación y venta de piscinas realizamos asesorías previas a la construcción (estudio de viabilidad de tu proyecto) así como también reparación y mantención de pisicinas en fibra.</p>
         <Button

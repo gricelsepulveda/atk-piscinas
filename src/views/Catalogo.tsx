@@ -9,7 +9,7 @@ const Catalogo:React.FunctionComponent = () => {
   }
 
   return (
-    <section className="atk-catalogo">
+    <section className="atk-catalogo" id="catalogo">
       <h2 className="atk-titles color-1">Catálogo</h2>
       <Banner data={bannerData.data} active={bannerData.active}/>
     </section>

@@ -9,7 +9,7 @@ const Contacto:React.FunctionComponent = () => {
 
 
   return (
-    <section className="atk-contact">
+    <section className="atk-contact" id="contacto">
       <h1>Contacto</h1>
       <form>
         <label>Nombre:</label>

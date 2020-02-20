@@ -18,7 +18,12 @@
   padding-left: 40px;
   z-index: 99;
   @media #{$sm}{
-    height: auto;
+    background-color: rgba($white-alt, 0.9);
+    height: 0;
+    overflow: hidden;
+    &.active {
+      height: auto;
+    }
   }
   .atk-nav-links {
     display: flex;
@@ -28,9 +33,10 @@
     align-content: center;
     @include clean-list;
     @media #{$sm}{
+      display: flex!important;
       flex-direction: column;
       justify-content: center;
-      width: 100vw;
+      min-width: 100%!important;
     }
     .atk-nav-link {
       @include clean-list;
@@ -75,6 +81,9 @@
     > img {
       height: 36px;
       width: auto;
+    }
+    @media #{$sm}{
+      display: none;
     }
   }
 }
