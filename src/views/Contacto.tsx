@@ -1,10 +1,59 @@
-import React from "react"
+import React, { useState } from "react"
 import Button from "../components/Button/Button"
 
 const Contacto:React.FunctionComponent = () => {
 
-  const goToContact = (event:string) => {
+  const [mail, setMail] = useState({
+      nombre: '',
+      email: '',
+      message: '',
+  });
 
+  const goToContact = () => {
+    const data = new FormData()
+    data.append('mensaje',mail.message);
+    data.append('email',mail.email);
+    data.append('nombre',mail.nombre);
+    fetch('https://www.piscinasatk.cl/contact.php',{
+      method: 'POST',
+      body: data
+    }).then(function(response){
+      if(response.ok){
+        console.log('email enviado con exito');
+      }else{
+        console.log('error al enviar email');
+      }
+    })
+    .then(function(texto) {
+      console.log(texto);
+    })
+
+  }
+  const handleChange = (event:any) => {
+    if(event.target.name == 'email'){
+      setMail({
+        nombre: mail.nombre,
+        email: event.target.value,
+        message: mail.message
+      })
+      console.log(mail)
+    }
+    if(event.target.name == 'nombre'){
+      setMail({
+        nombre: event.target.value,
+        email: mail.email,
+        message: mail.message
+      }) 
+      console.log(mail)
+    }
+    if(event.target.name == 'message'){
+      setMail({
+        nombre: mail.nombre,
+        email: mail.email,
+        message: event.target.value
+      }) 
+      console.log(mail)
+    }
   }
 
 
@@ -13,11 +62,11 @@ const Contacto:React.FunctionComponent = () => {
       <h1>Contacto</h1>
       <form>
         <label>Nombre:</label>
-        <input type="text" placeholder="Nombre"/>
+        <input name="nombre" type="text" onChange={handleChange} placeholder="Nombre"/>
         <label>Correo:</label>
-        <input type="text" placeholder="Correo"/>
+        <input name="email" type="email" onChange={handleChange} placeholder="Correo"/>
         <label>Mensaje:</label>
-        <textarea/>
+        <textarea name="message" onChange={handleChange}/>
         <Button
                 width="auto"
                 name="go-to-contact-index"
@@ -26,7 +75,7 @@ const Contacto:React.FunctionComponent = () => {
                 disabled={false}
                 color={{color: "color-3"}}
                 value="enviar"
-                onclick={() => goToContact("onclick")}
+                onclick={() => goToContact()}
                 onmouseout={() => undefined}
                 onmouseover={() => undefined}
                 active={false}
